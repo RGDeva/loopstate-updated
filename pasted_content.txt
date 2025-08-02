@@ -1,0 +1,108 @@
+Build a responsive web app called LoopState — a music collaboration platform designed for artists, producers, and creators to share unfinished projects, find collaborators, and monetize in-progress work. The experience should feel familiar like modern creative tools (e.g. Google Drive, Discord, SoundCloud), but purpose-built for music collabs.
+
+🎨 Core User Flows
+1. Login & Onboarding
+Sign in via email, Google, or Apple using Privy (Web2.5 auth behind the scenes)
+
+Set up profile with:
+
+Name, role (artist, producer, engineer, etc.), genres, socials
+
+Option to add wallet address (for future payouts, if applicable)
+
+2. Create a Project
+“New Project” button opens modal with:
+
+Project title, description, genre, BPM, key
+
+Upload any number of files: MP3s, WAVs, stems, lyrics, visuals
+
+Drag-and-drop UX for file uploads
+
+Add moodboard/reference links (YouTube, SoundCloud)
+
+Set collaboration needs via checklist (e.g. “Need vocalist,” “Need mix engineer”)
+
+Choose monetization setup:
+
+Bounty — offer a payment for the best contribution
+
+Unlockable — fans pay to access files (optional tiered access)
+
+3. Collaboration Workspace
+Project page includes:
+
+Waveform player
+
+Commenting system (with timestamps)
+
+File version history (new drafts, stems, mixes)
+
+Real-time or async group chat per project
+
+“Request to Collaborate” form for contributors
+
+Contributor cards with profile previews
+
+4. Split Sheet Builder
+Auto-pull project contributors into a structured split form
+
+Editable names, emails, % shares, roles
+
+Export as PDF or CSV
+
+Optional: digitally sign and track approvals
+
+For select projects, activate automatic split execution via backend smart contract (e.g. if a bounty or unlockable project includes revenue)
+
+5. Fan Access & Monetization
+If a project is marked “Unlockable,” fans can:
+
+View preview
+
+Pay to unlock stems / files
+
+Receive access via a clean, user-friendly purchase confirmation flow
+
+Payments processed via Stripe or crypto (USDC under the hood, never exposed directly unless configured in admin)
+
+6. Bounty Workflow
+Artist sets up bounty:
+
+Title, reward amount, deadline
+
+Auto-locks payout until artist selects winner
+
+Contributors upload their entries
+
+Artist selects winner → payout automatically sent (using smart contract in background)
+
+7. Explore + Feed
+Public Explore page with filterable cards:
+
+Genre, BPM, collab needs, “Bounty Active,” “Unlockable”
+
+Trending, Recent, Near Completion
+
+Each card shows:
+
+Cover art or waveform preview
+
+Collab roles needed
+
+of contributors & comments
+⚙️ Tech Notes (Backend Only Where Needed)
+Privy for seamless login with embedded wallet capability (Web2.5 experience)
+
+Smart contract support for bounty and revenue splits (non-custodial, invisible to user unless managing split)
+
+Stripe or USDC for fan purchases or bounty payouts
+
+Unlimited storage per project (use S3, Cloudinary, or IPFS/Arweave blend)
+
+Clean, modern UI with dark/light mode and mobile responsiveness
+
+🏷️ App Name: LoopState
+Tagline: Collaborate Before It’s Finished.
+
+Avoid any crypto jargon or Web3 language in the frontend. All advanced logic (bounties, payments, splits) should feel simple and familiar. UI should prioritize creative flow and communication, with zero friction.
